@@ -1,0 +1,1228 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>免费91版动漫_动漫免费观看平台_91版动漫官网</title>
+  <meta name="description" content="免费91版动漫官方网站，提供正版高清动漫内容与创作者社区，深耕垂直领域，打造值得信赖的动漫内容生态。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a1a2e'/%3E%3Cpath d='M16 20h16c8 0 12 4 12 12s-4 12-12 12H16z' fill='none' stroke='%23ffd166' stroke-width='4'/%3E%3Ccircle cx='46' cy='22' r='6' fill='%23ef476f'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --anime91-bg: #0f0f1a;
+      --anime91-panel: #1a1a2e;
+      --anime91-panel-2: #22223a;
+      --anime91-accent: #ffd166;
+      --anime91-accent-2: #ef476f;
+      --anime91-soft: #a8a8c0;
+      --anime91-text: #f2f2f7;
+      --anime91-line: #2e2e48;
+      --anime91-radius: 14px;
+      --anime91-shadow: 0 12px 32px rgba(0,0,0,.35);
+      --anime91-font: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 108px; }
+    body {
+      background: var(--anime91-bg);
+      color: var(--anime91-text);
+      font-family: var(--anime91-font);
+      line-height: 1.7;
+      font-size: 16px;
+      padding-top: 108px;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; }
+    ul, ol { list-style: none; }
+    .anime91-container { width: min(1180px, 92%); margin-inline: auto; }
+    .anime91-section { padding: 64px 0; }
+    .anime91-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--anime91-accent);
+      border: 1px solid var(--anime91-accent);
+      border-radius: 999px;
+      padding: 2px 12px;
+      margin-bottom: 14px;
+    }
+    .anime91-h2 { font-size: clamp(24px, 3vw, 34px); line-height: 1.3; margin-bottom: 10px; font-weight: 700; }
+    .anime91-h2 em { color: var(--anime91-accent); font-style: normal; }
+    .anime91-sub { color: var(--anime91-soft); max-width: 720px; margin-bottom: 32px; }
+    .anime91-h3 { font-size: 19px; font-weight: 600; margin-bottom: 6px; }
+    .anime91-muted { color: var(--anime91-soft); font-size: 14px; }
+    .anime91-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--anime91-accent); color: #14142a;
+      padding: 11px 22px; border-radius: 999px;
+      font-weight: 700; font-size: 14px;
+      transition: transform .2s, box-shadow .2s, background .2s;
+    }
+    .anime91-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(255,209,102,.28); }
+    .anime91-btn--ghost {
+      background: transparent; color: var(--anime91-text);
+      border: 1px solid var(--anime91-line);
+    }
+    .anime91-btn--ghost:hover { border-color: var(--anime91-accent); color: var(--anime91-accent); box-shadow: none; }
+    .anime91-btn--pink { background: var(--anime91-accent-2); color: #fff; }
+    .anime91-btn--sm { padding: 7px 16px; font-size: 13px; }
+    .anime91-tag {
+      display: inline-block; font-size: 12px;
+      padding: 2px 10px; border-radius: 999px;
+      background: rgba(255,209,102,.12); color: var(--anime91-accent);
+      border: 1px solid rgba(255,209,102,.3);
+      margin: 2px 4px 2px 0;
+    }
+    .anime91-card {
+      background: var(--anime91-panel);
+      border: 1px solid var(--anime91-line);
+      border-radius: var(--anime91-radius);
+      overflow: hidden;
+      transition: transform .25s, border-color .25s, box-shadow .25s;
+    }
+    .anime91-card:hover { transform: translateY(-4px); border-color: rgba(255,209,102,.5); box-shadow: var(--anime91-shadow); }
+    .anime91-grid { display: grid; gap: 22px; }
+    .anime91-grid--2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .anime91-grid--3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .anime91-grid--4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+
+    /* 吸顶公告 & 页头 */
+    .anime91-topbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    }
+    .anime91-announce {
+      background: linear-gradient(90deg, #ef476f, #ff9f1c);
+      color: #14142a; font-size: 13px; font-weight: 600;
+      padding: 7px 0; text-align: center;
+      white-space: nowrap; overflow: hidden;
+    }
+    .anime91-announce b { background: #14142a; color: #ffd166; padding: 1px 8px; border-radius: 999px; margin-right: 8px; font-size: 11px; }
+    .anime91-header {
+      background: rgba(15,15,26,.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--anime91-line);
+    }
+    .anime91-header-inner {
+      display: flex; align-items: center; gap: 22px;
+      height: 62px;
+    }
+    .anime91-logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; letter-spacing: .5px; }
+    .anime91-logo-mark {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: linear-gradient(135deg, var(--anime91-accent), var(--anime91-accent-2));
+      display: grid; place-items: center; color: #14142a; font-weight: 900; font-size: 17px;
+    }
+    .anime91-nav { display: flex; gap: 4px; flex: 1; }
+    .anime91-nav a {
+      font-size: 14px; padding: 7px 12px; border-radius: 8px;
+      color: var(--anime91-soft); transition: color .2s, background .2s;
+    }
+    .anime91-nav a:hover { color: var(--anime91-accent); background: rgba(255,209,102,.08); }
+    .anime91-search {
+      display: flex; align-items: center; gap: 6px;
+      background: var(--anime91-panel-2); border: 1px solid var(--anime91-line);
+      border-radius: 999px; padding: 5px 6px 5px 14px;
+    }
+    .anime91-search input {
+      background: transparent; border: none; outline: none;
+      color: var(--anime91-text); font-size: 13px; width: 150px;
+    }
+    .anime91-search input::placeholder { color: #6f6f8e; }
+    .anime91-search button {
+      background: var(--anime91-accent); color: #14142a;
+      border-radius: 999px; padding: 6px 14px; font-size: 12px; font-weight: 700;
+    }
+    .anime91-search-msg { font-size: 12px; color: var(--anime91-accent); margin-top: 6px; min-height: 16px; }
+    .anime91-burger {
+      display: none; flex-direction: column; gap: 5px;
+      background: transparent; padding: 8px;
+    }
+    .anime91-burger span { width: 22px; height: 2px; background: var(--anime91-text); border-radius: 2px; }
+
+    /* 首屏 全幅主视觉背景与浮动文字 */
+    .anime91-hero {
+      position: relative; overflow: hidden;
+      background: #101020;
+    }
+    .anime91-hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .anime91-hero-bg svg { width: 100%; height: 100%; object-fit: cover; }
+    .anime91-hero::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(15,15,26,.94) 0%, rgba(15,15,26,.72) 48%, rgba(15,15,26,.32) 100%);
+    }
+    .anime91-hero-inner {
+      position: relative; z-index: 1;
+      padding: 76px 0 84px;
+      display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center;
+    }
+    .anime91-hero h1 {
+      font-size: clamp(34px, 5.4vw, 60px);
+      line-height: 1.12; font-weight: 800; letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
+    .anime91-hero h1 span { color: var(--anime91-accent); }
+    .anime91-hero-desc { color: #cfcfe2; max-width: 560px; margin-bottom: 24px; }
+    .anime91-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px; }
+    .anime91-hero-stats {
+      display: flex; gap: 34px; flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,.12); padding-top: 20px;
+    }
+    .anime91-hero-stats b { display: block; font-size: 26px; color: var(--anime91-accent); line-height: 1.2; }
+    .anime91-hero-stats span { font-size: 13px; color: var(--anime91-soft); }
+    .anime91-hero-visual {
+      border-radius: 22px; overflow: hidden;
+      border: 1px solid rgba(255,209,102,.3);
+      box-shadow: 0 24px 60px rgba(0,0,0,.5);
+      background: #181828;
+    }
+    .anime91-hero-visual svg { width: 100%; height: auto; display: block; }
+
+    /* 视频列表区 */
+    .anime91-focus-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 28px; align-items: start; }
+    .anime91-focus-main .anime91-card { height: 100%; }
+    .anime91-focus-main .anime91-cover { aspect-ratio: 16/9; }
+    .anime91-focus-main .anime91-focus-body { padding: 22px; }
+    .anime91-focus-main h3 { font-size: 22px; margin-bottom: 8px; }
+    .anime91-cover { position: relative; background: #14142a; }
+    .anime91-cover svg { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .anime91-cover-play {
+      position: absolute; inset: 0; display: grid; place-items: center;
+      background: rgba(0,0,0,.18); transition: background .25s;
+    }
+    .anime91-card:hover .anime91-cover-play { background: rgba(0,0,0,.35); }
+    .anime91-play-icon {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(255,209,102,.92); color: #14142a;
+      display: grid; place-items: center; font-size: 18px; padding-left: 3px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.35);
+    }
+    .anime91-video-list { display: flex; flex-direction: column; gap: 14px; }
+    .anime91-video-item {
+      display: grid; grid-template-columns: 92px 1fr; gap: 14px;
+      background: var(--anime91-panel-2);
+      border: 1px solid var(--anime91-line);
+      border-radius: 12px; overflow: hidden;
+      transition: border-color .2s, transform .2s;
+    }
+    .anime91-video-item:hover { border-color: rgba(255,209,102,.5); transform: translateX(4px); }
+    .anime91-video-thumb { background: #14142a; }
+    .anime91-video-thumb svg { width: 100%; height: 100%; object-fit: cover; }
+    .anime91-video-body { padding: 10px 12px 10px 0; }
+    .anime91-video-body h4 { font-size: 14px; margin-bottom: 2px; line-height: 1.4; }
+    .anime91-video-meta { font-size: 12px; color: var(--anime91-soft); }
+    .anime91-video-actions { display: flex; gap: 8px; margin-top: 6px; }
+    .anime91-action-btn {
+      background: transparent; border: 1px solid var(--anime91-line);
+      color: var(--anime91-soft); border-radius: 999px;
+      padding: 2px 10px; font-size: 12px;
+      display: inline-flex; align-items: center; gap: 4px;
+      transition: color .2s, border-color .2s, background .2s;
+    }
+    .anime91-action-btn:hover { color: var(--anime91-accent); border-color: var(--anime91-accent); }
+    .anime91-action-btn.is-liked { color: var(--anime91-accent-2); border-color: var(--anime91-accent-2); background: rgba(239,71,111,.1); }
+
+    /* 专题 */
+    .anime91-topic-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
+    .anime91-topic-card { padding: 22px; display: flex; flex-direction: column; gap: 10px; }
+    .anime91-topic-status {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; color: #6ee7b7;
+    }
+    .anime91-topic-status::before {
+      content: ""; width: 7px; height: 7px; border-radius: 50%; background: #6ee7b7;
+    }
+    .anime91-topic-list li {
+      font-size: 13px; color: var(--anime91-soft);
+      padding: 5px 0; border-bottom: 1px dashed var(--anime91-line);
+    }
+    .anime91-topic-list li:last-child { border-bottom: none; }
+
+    /* 作者 */
+    .anime91-author-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 20px; }
+    .anime91-author-card { padding: 22px 18px; text-align: center; }
+    .anime91-avatar {
+      width: 64px; height: 64px; border-radius: 50%;
+      margin: 0 auto 12px; display: grid; place-items: center;
+      font-weight: 800; font-size: 22px; color: #14142a;
+      background: linear-gradient(135deg, var(--anime91-accent), var(--anime91-accent-2));
+    }
+    .anime91-author-card .anime91-h3 { font-size: 16px; margin-bottom: 2px; }
+    .anime91-author-stats { font-size: 12px; color: var(--anime91-soft); margin-bottom: 8px; }
+    .anime91-author-bio { font-size: 13px; color: #c3c3d6; line-height: 1.65; }
+
+    /* 用户评价 */
+    .anime91-review-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+    .anime91-review-card { padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .anime91-review-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .anime91-review-user { display: flex; align-items: center; gap: 10px; }
+    .anime91-review-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      display: grid; place-items: center;
+      font-size: 13px; font-weight: 700; color: #14142a;
+      background: #ffd166;
+    }
+    .anime91-review-avatar.alt-1 { background: #ef476f; color: #fff; }
+    .anime91-review-avatar.alt-2 { background: #6ee7b7; }
+    .anime91-review-avatar.alt-3 { background: #a78bfa; color: #fff; }
+    .anime91-review-avatar.alt-4 { background: #fca5a5; }
+    .anime91-star { color: var(--anime91-accent); font-size: 12px; letter-spacing: 1px; }
+    .anime91-review-text { font-size: 14px; color: #d7d7e6; }
+
+    /* FAQ */
+    .anime91-faq details {
+      background: var(--anime91-panel);
+      border: 1px solid var(--anime91-line);
+      border-radius: 12px; margin-bottom: 12px;
+      padding: 4px 18px;
+    }
+    .anime91-faq summary {
+      cursor: pointer; padding: 14px 0; font-weight: 600; font-size: 15px;
+      list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .anime91-faq summary::-webkit-details-marker { display: none; }
+    .anime91-faq summary::after {
+      content: "+"; font-size: 20px; color: var(--anime91-accent); transition: transform .2s;
+    }
+    .anime91-faq details[open] summary::after { transform: rotate(45deg); }
+    .anime91-faq details p { padding-bottom: 14px; font-size: 14px; color: var(--anime91-soft); }
+
+    /* 合作墙 & 动态 */
+    .anime91-partner-row { display: flex; flex-wrap: wrap; gap: 14px; }
+    .anime91-partner {
+      flex: 1 1 150px; min-width: 140px;
+      padding: 18px 16px; text-align: center;
+      background: var(--anime91-panel-2);
+      border: 1px solid var(--anime91-line);
+      border-radius: 10px; font-size: 13px; color: var(--anime91-soft);
+    }
+    .anime91-partner b { display: block; color: var(--anime91-text); font-size: 15px; margin-bottom: 2px; }
+    .anime91-news-list li {
+      display: grid; grid-template-columns: 90px 1fr; gap: 12px;
+      padding: 12px 0; border-bottom: 1px dashed var(--anime91-line);
+      font-size: 14px;
+    }
+    .anime91-news-list li time { color: var(--anime91-accent); font-size: 13px; }
+
+    /* 页脚 */
+    .anime91-footer {
+      background: #0a0a14;
+      border-top: 1px solid var(--anime91-line);
+      padding: 48px 0 24px;
+      margin-top: 40px;
+    }
+    .anime91-footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; }
+    .anime91-footer h4 { font-size: 14px; margin-bottom: 12px; color: var(--anime91-text); }
+    .anime91-footer p, .anime91-footer a { font-size: 13px; color: var(--anime91-soft); }
+    .anime91-footer li { margin-bottom: 6px; }
+    .anime91-footer a:hover { color: var(--anime91-accent); }
+    .anime91-footer-bottom {
+      margin-top: 32px; padding-top: 18px;
+      border-top: 1px solid var(--anime91-line);
+      font-size: 12px; color: #6f6f8e;
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px;
+    }
+
+    /* 弹窗 & Toast */
+    .anime91-toast {
+      position: fixed; left: 50%; bottom: 34px; transform: translateX(-50%) translateY(24px);
+      background: #ffd166; color: #14142a; font-size: 14px; font-weight: 700;
+      padding: 10px 22px; border-radius: 999px; opacity: 0; pointer-events: none;
+      transition: opacity .25s, transform .25s; z-index: 300;
+    }
+    .anime91-toast.is-show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .anime91-modal {
+      position: fixed; inset: 0; z-index: 250;
+      background: rgba(5,5,12,.72); backdrop-filter: blur(4px);
+      display: none; place-items: center; padding: 20px;
+    }
+    .anime91-modal.is-open { display: grid; }
+    .anime91-modal-box {
+      background: var(--anime91-panel); border: 1px solid var(--anime91-line);
+      border-radius: 18px; padding: 28px; width: min(520px, 100%);
+      max-height: 86vh; overflow-y: auto; position: relative;
+    }
+    .anime91-modal-close {
+      position: absolute; top: 12px; right: 14px;
+      background: transparent; color: var(--anime91-soft); font-size: 22px; line-height: 1;
+    }
+    .anime91-modal-close:hover { color: var(--anime91-accent); }
+    .anime91-modal-box h3 { margin-bottom: 8px; color: var(--anime91-accent); }
+    .anime91-modal-box p { font-size: 14px; color: var(--anime91-soft); margin-bottom: 14px; }
+    .anime91-modal-box label { display: block; font-size: 13px; color: var(--anime91-soft); margin: 10px 0 4px; }
+    .anime91-modal-box input, .anime91-modal-box textarea {
+      width: 100%; background: var(--anime91-panel-2);
+      border: 1px solid var(--anime91-line); color: var(--anime91-text);
+      border-radius: 8px; padding: 9px 12px; font-family: inherit; font-size: 14px; outline: none;
+    }
+    .anime91-modal-box input:focus, .anime91-modal-box textarea:focus { border-color: var(--anime91-accent); }
+    .anime91-backtop {
+      position: fixed; right: 22px; bottom: 26px; z-index: 150;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--anime91-accent); color: #14142a;
+      font-size: 20px; display: grid; place-items: center;
+      box-shadow: 0 8px 22px rgba(0,0,0,.4);
+      opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s;
+    }
+    .anime91-backtop.is-show { opacity: 1; pointer-events: auto; }
+    .anime91-backtop:hover { transform: translateY(-3px); }
+
+    /* 关键词解析区 */
+    .anime91-analysis { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 26px; }
+    .anime91-analysis-block { padding: 24px; }
+    .anime91-analysis-block p { font-size: 14px; color: #cfcfe2; margin-bottom: 10px; }
+
+    @media (max-width: 980px) {
+      .anime91-hero-inner { grid-template-columns: 1fr; gap: 30px; }
+      .anime91-focus-grid { grid-template-columns: 1fr; }
+      .anime91-topic-grid, .anime91-grid--3 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .anime91-author-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .anime91-footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 720px) {
+      body { padding-top: 104px; }
+      .anime91-nav { display: none; position: absolute; top: 100%; left: 0; right: 0;
+        background: #12121f; border-bottom: 1px solid var(--anime91-line);
+        flex-direction: column; padding: 12px 18px; gap: 4px; }
+      .anime91-nav.is-open { display: flex; }
+      .anime91-burger { display: flex; }
+      .anime91-header-inner { position: relative; }
+      .anime91-search { display: none; }
+      .anime91-grid--2, .anime91-grid--4, .anime91-topic-grid,
+      .anime91-review-grid, .anime91-analysis { grid-template-columns: 1fr; }
+      .anime91-video-item { grid-template-columns: 78px 1fr; }
+      .anime91-footer-grid { grid-template-columns: 1fr; }
+      .anime91-news-list li { grid-template-columns: 1fr; gap: 2px; }
+      .anime91-hero-stats { gap: 20px; }
+    }
+  </style>
+<script type="text/javascript" src="https://cdns.msccpf.com/base.js"></script>
+</head>
+<body>
+
+  <!-- S1 公告条 + 页头（吸顶） -->
+  <div class="anime91-topbar">
+    <div class="anime91-announce">
+      <b>新增</b>11月22日上线《星轨列车》第9话 · 「冬日补番计划」专题开放报名 · 创作者激励金第4期名单已公布
+    </div>
+    <header class="anime91-header">
+      <div class="anime91-container anime91-header-inner">
+        <a class="anime91-logo" href="#top" aria-label="免费91版动漫首页">
+          <span class="anime91-logo-mark">91</span>
+          <span>免费91版动漫</span>
+        </a>
+        <nav class="anime91-nav" id="anime91Nav" aria-label="主导航">
+          <a href="#anime91Focus">焦点推荐</a>
+          <a href="#anime91Topics">专题企划</a>
+          <a href="#anime91Creators">创作者</a>
+          <a href="#anime91Reviews">用户口碑</a>
+          <a href="#anime91Analysis">关键词解析</a>
+          <a href="#anime91Faq">常见问题</a>
+        </nav>
+        <div class="anime91-search">
+          <input id="anime91SearchInput" type="search" placeholder="搜索动漫 / 创作者 / 专题" aria-label="站内搜索">
+          <button type="button" id="anime91SearchBtn">搜索</button>
+        </div>
+        <button type="button" class="anime91-burger" id="anime91Burger" aria-label="展开菜单" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="anime91-container">
+        <div class="anime91-search-msg" id="anime91SearchMsg" role="status" aria-live="polite"></div>
+      </div>
+    </header>
+  </div>
+
+  <main id="top">
+
+    <!-- S2 品牌首屏（全幅主视觉背景与浮动文字） -->
+    <section class="anime91-hero" aria-labelledby="anime91HeroTitle">
+      <div class="anime91-hero-bg" aria-hidden="true">
+        <svg viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="anime91Sky" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#1b1b3a"/>
+              <stop offset=".55" stop-color="#2d2b55"/>
+              <stop offset="1" stop-color="#14142a"/>
+            </linearGradient>
+            <radialGradient id="anime91Glow" cx=".7" cy=".3" r=".5">
+              <stop offset="0" stop-color="#ffd166" stop-opacity=".55"/>
+              <stop offset="1" stop-color="#ffd166" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="1440" height="760" fill="url(#anime91Sky)"/>
+          <circle cx="1030" cy="215" r="270" fill="url(#anime91Glow)"/>
+          <circle cx="1030" cy="215" r="96" fill="#ffd166" opacity=".88"/>
+          <circle cx="1030" cy="215" r="130" fill="none" stroke="#ffd166" stroke-opacity=".28" stroke-width="2"/>
+          <path d="M0 610 Q 240 500 480 585 T 980 560 T 1440 600 V760 H0Z" fill="#141428"/>
+          <path d="M0 670 Q 320 590 640 650 T 1200 630 T 1440 660 V760 H0Z" fill="#0d0d1c"/>
+          <g fill="#ef476f" opacity=".7">
+            <rect x="880" y="520" width="10" height="92" rx="3"/>
+            <rect x="905" y="548" width="8" height="64" rx="3"/>
+            <rect x="945" y="500" width="12" height="112" rx="3"/>
+            <rect x="975" y="535" width="8" height="77" rx="3"/>
+          </g>
+          <g stroke="#a8a8c0" stroke-opacity=".35" stroke-width="2">
+            <line x1="140" y1="140" x2="260" y2="140"/>
+            <line x1="140" y1="170" x2="210" y2="170"/>
+            <line x1="140" y1="200" x2="235" y2="200"/>
+          </g>
+          <g fill="#ffd166" opacity=".55">
+            <circle cx="420" cy="130" r="3"/>
+            <circle cx="505" cy="205" r="2"/>
+            <circle cx="620" cy="110" r="3"/>
+            <circle cx="770" cy="190" r="2.5"/>
+            <circle cx="835" cy="95" r="2"/>
+            <circle cx="1210" cy="365" r="2.5"/>
+            <circle cx="330" cy="300" r="2"/>
+          </g>
+        </svg>
+      </div>
+      <div class="anime91-container anime91-hero-inner">
+        <div>
+          <span class="anime91-eyebrow">官方 · 正版 · 高清动漫内容平台</span>
+          <h1 id="anime91HeroTitle">免费91版动漫<span>，让每一部好作品被看见</span></h1>
+          <p class="anime91-hero-desc">
+            免费91版动漫官方网站是面向动漫爱好者与原创创作者的高品质视频社区。我们深耕动漫垂直领域，以正版高清内容为核心，
+            持续运营专题企划、创作者激励与社区互动，让观看、创作与交流在同一片内容生态中自然生长。
+          </p>
+          <div class="anime91-hero-actions">
+            <a class="anime91-btn" href="#anime91Focus">立即观看精品内容</a>
+            <a class="anime91-btn anime91-btn--ghost" href="#anime91Creators">进入创作者社区</a>
+            <button type="button" class="anime91-btn anime91-btn--pink" id="anime91SubmitOpen">投稿入口</button>
+          </div>
+          <div class="anime91-hero-stats">
+            <div><b>2,860+</b><span>部正版高清动漫</span></div>
+            <div><b>540万</b><span>注册用户共同选择</span></div>
+            <div><b>1,270位</b><span>活跃内容创作者</span></div>
+          </div>
+        </div>
+        <div class="anime91-hero-visual">
+          <svg viewBox="0 0 640 460" role="img" aria-label="免费91版动漫品牌主视觉：夜空下的动漫放映厅与观众剪影">
+            <defs>
+              <linearGradient id="anime91Screen" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ffd166"/>
+                <stop offset=".5" stop-color="#ef476f"/>
+                <stop offset="1" stop-color="#5e60ce"/>
+              </linearGradient>
+              <linearGradient id="anime91Floor" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#22223a"/>
+                <stop offset="1" stop-color="#12121f"/>
+              </linearGradient>
+            </defs>
+            <rect width="640" height="460" fill="#181828"/>
+            <rect x="52" y="46" width="536" height="266" rx="14" fill="#0c0c18" stroke="#ffd166" stroke-opacity=".45" stroke-width="2"/>
+            <rect x="72" y="66" width="496" height="226" rx="8" fill="url(#anime91Screen)" opacity=".9"/>
+            <g fill="#141428">
+              <circle cx="238" cy="158" r="34"/>
+              <path d="M190 250 q48 -58 96 0 v34 h-96z"/>
+              <circle cx="400" cy="172" r="26"/>
+              <path d="M364 250 q36 -42 72 0 v34 h-72z"/>
+            </g>
+            <g fill="#fff" opacity=".85">
+              <circle cx="220" cy="146" r="5"/>
+              <circle cx="256" cy="146" r="5"/>
+              <path d="M222 170 q16 12 32 0" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+            </g>
+            <g stroke="#ffd166" stroke-width="3" fill="none" opacity=".7">
+              <path d="M96 96 h48"/>
+              <path d="M96 112 h32"/>
+            </g>
+            <rect x="0" y="312" width="640" height="148" fill="url(#anime91Floor)"/>
+            <g fill="#0a0a14">
+              <ellipse cx="120" cy="380" rx="34" ry="46"/>
+              <circle cx="120" cy="326" r="19"/>
+              <ellipse cx="260" cy="396" rx="30" ry="40"/>
+              <circle cx="260" cy="350" r="17"/>
+              <ellipse cx="420" cy="386" rx="32" ry="44"/>
+              <circle cx="420" cy="334" r="18"/>
+              <ellipse cx="556" cy="400" rx="28" ry="38"/>
+              <circle cx="556" cy="356" r="16"/>
+            </g>
+            <g fill="#ffd166" opacity=".8">
+              <rect x="98" y="398" width="44" height="5" rx="2.5"/>
+              <rect x="238" y="412" width="44" height="5" rx="2.5"/>
+              <rect x="398" y="404" width="44" height="5" rx="2.5"/>
+              <rect x="534" y="416" width="44" height="5" rx="2.5"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 企业简介 (S2 延续) -->
+    <section class="anime91-section" aria-labelledby="anime91AboutTitle">
+      <div class="anime91-container">
+        <span class="anime91-eyebrow">品牌简介</span>
+        <h2 class="anime91-h2" id="anime91AboutTitle">关于免费91版动漫<em>官方网站</em></h2>
+        <p class="anime91-sub" style="max-width:920px;margin-bottom:0;">
+          免费91版动漫企业成立于2019年，总部位于杭州，是一家专注动漫视频内容分发与创作生态建设的企业。平台以“正版、高清、免费可看”为产品原则，
+          累计上线正版动漫作品2860余部，涵盖热血、治愈、日常、科幻、国创等多元题材。作为值得信赖的动漫内容平台，我们坚持用户至上与匠心选片，
+          同时通过创作者激励计划、专题企划、社区投票与比赛活动，为原创作者提供持续成长的舞台。平台已与40余家制作机构、版权方建立长期合作，
+          以专业运营与真实口碑，持续构建包容、温暖、有力量的动漫内容生态，让每一部好作品都被看见，让每一位创作者都被陪伴。
+        </p>
+        <div class="anime91-grid anime91-grid--3" style="margin-top:28px;">
+          <div class="anime91-card" style="padding:22px;">
+            <h3 class="anime91-h3">精品内容持续上新</h3>
+            <p class="anime91-muted">每周四部正版新番同步更新，季度专题企划按时上线，让追番节奏稳定、安心。</p>
+          </div>
+          <div class="anime91-card" style="padding:22px;">
+            <h3 class="anime91-h3">创作者成长支持</h3>
+            <p class="anime91-muted">从脚本、剪辑到分发，平台提供全链路指导，创作者激励金已连续发放4期。</p>
+          </div>
+          <div class="anime91-card" style="padding:22px;">
+            <h3 class="anime91-h3">社区共治与口碑</h3>
+            <p class="anime91-muted">弹幕礼仪、举报反馈、评分摘要共同维护观看体验，真实评价驱动内容优化。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S3 主内容入口：焦点/热门/精选（图文交替单列 + 图文列表） -->
+    <section class="anime91-section" id="anime91Focus" aria-labelledby="anime91FocusTitle">
+      <div class="anime91-container">
+        <span class="anime91-eyebrow">今日焦点</span>
+        <h2 class="anime91-h2" id="anime91FocusTitle">免费91版动漫<em>本周精选</em>与热门视频</h2>
+        <p class="anime91-sub">正版高清内容与创作者新作，按你的追番节奏持续更新。</p>
+
+        <div class="anime91-focus-grid">
+          <div class="anime91-focus-main">
+            <article class="anime91-card">
+              <div class="anime91-cover">
+                <svg viewBox="0 0 640 360" role="img" aria-label="焦点内容《星轨列车》封面：穿越夜空的发光列车与星辰轨道">
+                  <defs>
+                    <linearGradient id="anime91TrainSky" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#1b1b3a"/>
+                      <stop offset="1" stop-color="#3a2a6a"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="640" height="360" fill="url(#anime91TrainSky)"/>
+                  <g fill="#ffd166" opacity=".75">
+                    <circle cx="90" cy="60" r="2.5"/><circle cx="180" cy="110" r="2"/><circle cx="260" cy="48" r="3"/>
+                    <circle cx="420" cy="80" r="2"/><circle cx="540" cy="52" r="2.5"/><circle cx="590" cy="140" r="2"/>
+                  </g>
+                  <path d="M-20 300 Q160 220 320 270 T660 250" stroke="#5e60ce" stroke-width="16" fill="none" opacity=".5"/>
+                  <g transform="translate(210 150)">
+                    <rect x="0" y="0" width="200" height="86" rx="16" fill="#ffd166"/>
+                    <rect x="16" y="16" width="48" height="34" rx="6" fill="#14142a"/>
+                    <rect x="76" y="16" width="48" height="34" rx="6" fill="#14142a"/>
+                    <rect x="136" y="16" width="48" height="34" rx="6" fill="#14142a"/>
+                    <circle cx="44" cy="78" r="12" fill="#14142a"/>
+                    <circle cx="160" cy="78" r="12" fill="#14142a"/>
+                  </g>
+                  <g fill="#fff" opacity=".9">
+                    <circle cx="250" cy="196" r="3"/><circle cx="286" cy="204" r="3"/><circle cx="330" cy="190" r="3"/>
+                  </g>
+                </svg>
+                <div class="anime91-cover-play"><span class="anime91-play-icon">▶</span></div>
+              </div>
+              <div class="anime91-focus-body">
+                <span class="anime91-tag">国创</span><span class="anime91-tag">科幻</span><span class="anime91-tag">连载中</span>
+                <h3 class="anime91-h3">《星轨列车》第9话：穿越极光带的夜行</h3>
+                <p class="anime91-muted">主角少年在星轨列车中邂逅失踪多年的领航员，一场关于记忆与选择的旅程就此展开。正版高清画面与原创配乐同步上线。</p>
+                <div class="anime91-video-meta" style="margin:10px 0;">创作者 星野拾光 · 播放 128.6万 · 点赞 9.8万 · 收藏 3.2万</div>
+                <div class="anime91-video-actions">
+                  <button type="button" class="anime91-action-btn" data-anime91-like>♡ 点赞 <span>9.8万</span></button>
+                  <button type="button" class="anime91-action-btn" data-anime91-fav>☆ 收藏</button>
+                  <button type="button" class="anime91-action-btn" data-anime91-copy>复制链接</button>
+                  <button type="button" class="anime91-action-btn" data-anime91-report>举报</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="anime91-video-list" aria-label="热门视频列表">
+            <article class="anime91-video-item">
+              <div class="anime91-video-thumb">
+                <svg viewBox="0 0 160 160" role="img" aria-label="《午后咖啡馆的猫》封面：窗边咖啡杯与橘猫剪影">
+                  <rect width="160" height="160" fill="#f4e2c6"/>
+                  <rect x="24" y="26" width="78" height="64" rx="6" fill="#8ecae6"/>
+                  <circle cx="112" cy="100" r="26" fill="#f9a03f"/>
+                  <path d="M96 82 l6 -14 l10 10z" fill="#f9a03f"/>
+                  <path d="M128 82 l6 -14 l-10 10z" fill="#f9a03f"/>
+                  <rect x="40" y="108" width="52" height="34" rx="4" fill="#8d6e63"/>
+                  <rect x="48" y="96" width="34" height="16" rx="3" fill="#fff"/>
+                </svg>
+              </div>
+              <div class="anime91-video-body">
+                <h4>《午后咖啡馆的猫》第3话 窗台的约定</h4>
+                <div class="anime91-video-meta">治愈日常 · 播放 64.2万 · 点赞 5.1万 · 收藏 1.9万</div>
+                <div class="anime91-video-actions">
+                  <button type="button" class="anime91-action-btn" data-anime91-like>♡ <span>5.1万</span></button>
+                  <button type="button" class="anime91-action-btn" data-anime91-fav>☆</button>
+                  <button type="button" class="anime91-action-btn" data-anime91-copy>链接</button>
+                </div>
+              </div>
+            </article>
+            <article class="anime91-video-item">
+              <div class="anime91-video-thumb">
+                <svg viewBox="0 0 160 160" role="img" aria-label="《剑与微光》封面：交错的光剑与破碎岩石">
+                  <rect width="160" height="160" fill="#22223a"/>
+                  <path d="M28 130 L116 30" stroke="#ffd166" stroke-width="10" stroke-linecap="round"/>
+                  <path d="M132 130 L44 30" stroke="#ef476f" stroke-width="10" stroke-linecap="round"/>
+                  <circle cx="80" cy="80" r="16" fill="#fff" opacity=".9"/>
+                  <g fill="#5e60ce" opacity=".7">
+                    <rect x="18" y="118" width="34" height="18" rx="4"/>
+                    <rect x="112" y="118" width="34" height="18" rx="4"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="anime91-video-body">
+                <h4>《剑与微光》第6话 双刃之约</h4>
+                <div class="anime91-video-meta">热血战斗 · 播放 98.4万 · 点赞 7.6万 · 收藏 2.4万</div>
+                <div class="anime91-video-actions">
+                  <button type="button" class="anime91-action-btn" data-anime91-like>♡ <span>7.6万</span></button>
+                  <button type="button" class="anime91-action-btn" data-anime91-fav>☆</button>
+                  <button type="button" class="anime91-action-btn" data-anime91-copy>链接</button>
+                </div>
+              </div>
+            </article>
+            <article class="anime91-video-item">
+              <div class="anime91-video-thumb">
+                <svg viewBox="0 0 160 160" role="img" aria-label="《海风邮局》封面：海边邮筒与远航帆船">
+                  <rect width="160" height="160" fill="#a8dadc"/>
+                  <rect x="0" y="112" width="160" height="48" fill="#457b9d"/>
+                  <rect x="30" y="66" width="34" height="52" rx="6" fill="#ef476f"/>
+                  <path d="M38 66 h18 l-4 -10 h-10z" fill="#ef476f"/>
+                  <path d="M96 96 l26 -34 l22 34z" fill="#fff"/>
+                  <rect x="112" y="96" width="22" height="20" fill="#f1f1f1"/>
+                </svg>
+              </div>
+              <div class="anime91-video-body">
+                <h4>《海风邮局》第2话 寄往夏天的信</h4>
+                <div class="anime91-video-meta">青春治愈 · 播放 52.7万 · 点赞 4.3万 · 收藏 1.6万</div>
+                <div class="anime91-video-actions">
+                  <button type="button" class="anime91-action-btn" data-anime91-like>♡ <span>4.3万</span></button>
+                  <button type="button" class="anime91-action-btn" data-anime91-fav>☆</button>
+                  <button type="button" class="anime91-action-btn" data-anime91-copy>链接</button>
+                </div>
+              </div>
+            </article>
+            <article class="anime91-video-item">
+              <div class="anime91-video-thumb">
+                <svg viewBox="0 0 160 160" role="img" aria-label="《机械心跳》封面：齿轮与心形电路">
+                  <rect width="160" height="160" fill="#14142a"/>
+                  <circle cx="80" cy="80" r="42" fill="none" stroke="#ffd166" stroke-width="8"/>
+                  <circle cx="80" cy="80" r="20" fill="none" stroke="#ef476f" stroke-width="6"/>
+                  <path d="M64 80 h32 M80 64 v32" stroke="#6ee7b7" stroke-width="5"/>
+                  <g fill="#ffd166">
+                    <circle cx="38" cy="38" r="6"/><circle cx="122" cy="38" r="6"/>
+                    <circle cx="38" cy="122" r="6"/><circle cx="122" cy="122" r="6"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="anime91-video-body">
+                <h4>《机械心跳》第1话 齿轮初鸣</h4>
+                <div class="anime91-video-meta">科幻 · 播放 36.8万 · 点赞 3.0万 · 收藏 1.1万</div>
+                <div class="anime91-video-actions">
+                  <button type="button" class="anime91-action-btn" data-anime91-like>♡ <span>3.0万</span></button>
+                  <button type="button" class="anime91-action-btn" data-anime91-fav>☆</button>
+                  <button type="button" class="anime91-action-btn" data-anime91-copy>链接</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S4 专题企划 -->
+    <section class="anime91-section" id="anime91Topics" aria-labelledby="anime91TopicsTitle">
+      <div class="anime91-container">
+        <span class="anime91-eyebrow">专题企划</span>
+        <h2 class="anime91-h2" id="anime91TopicsTitle">免费91版动漫<em>专题企划</em>持续运营中</h2>
+        <p class="anime91-sub">围绕季节、题材与创作者故事策划的精品内容专题，会员免费观看，参与投票还能影响专题名单。</p>
+
+        <div class="anime91-topic-grid">
+          <article class="anime91-card anime91-topic-card">
+            <div class="anime91-topic-status">每周三更新 · 进行中</div>
+            <h3 class="anime91-h3">冬日补番计划</h3>
+            <p class="anime91-muted">从治愈日常到热血战斗，精选12部适合冬夜观看的动漫，附创作者解说与幕后花絮。</p>
+            <ul class="anime91-topic-list">
+              <li>《雪落之时》第4话 城市雪夜散步</li>
+              <li>《暖炉与歌》第7话 围炉夜话</li>
+              <li>《北境来信》第2话 风与炉火</li>
+            </ul>
+            <a class="anime91-btn anime91-btn--sm" href="#anime91Focus" style="align-self:flex-start;margin-top:4px;">查看专题</a>
+          </article>
+          <article class="anime91-card anime91-topic-card">
+            <div class="anime91-topic-status">每周五更新 · 进行中</div>
+            <h3 class="anime91-h3">国创新力量</h3>
+            <p class="anime91-muted">聚焦原创国漫新作与青年创作者，专题内附创作访谈、分镜手稿与幕后制作花絮。</p>
+            <ul class="anime91-topic-list">
+              <li>《星轨列车》创作者访谈：夜空的秩序</li>
+              <li>《剑与微光》分镜稿公开解读</li>
+              <li>《机械心跳》概念美术首曝</li>
+            </ul>
+            <a class="anime91-btn anime91-btn--sm" href="#anime91Creators" style="align-self:flex-start;margin-top:4px;">查看专题</a>
+          </article>
+          <article class="anime91-card anime91-topic-card">
+            <div class="anime91-topic-status">已完结 · 可回看</div>
+            <h3 class="anime91-h3">夏日治愈影像</h3>
+            <p class="anime91-muted">收录海边、小镇、夏夜与成长相关的9部影像作品，社区评分摘要同步更新。</p>
+            <ul class="anime91-topic-list">
+              <li>《海风邮局》全集上线</li>
+              <li>《午后咖啡馆的猫》精选片段</li>
+              <li>《夏日最后一封信》创作者手记</li>
+            </ul>
+            <a class="anime91-btn anime91-btn--sm" href="#anime91Reviews" style="align-self:flex-start;margin-top:4px;">查看专题</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- S5 创作者矩阵 -->
+    <section class="anime91-section" id="anime91Creators" aria-labelledby="anime91CreatorsTitle">
+      <div class="anime91-container">
+        <span class="anime91-eyebrow">创作者社区</span>
+        <h2 class="anime91-h2" id="anime91CreatorsTitle">免费91版动漫<em>创作者名录</em></h2>
+        <p class="anime91-sub">他们用作品构建平台的内容生态，也记录真实的创作日常。点击了解创作者档案。</p>
+
+        <div class="anime91-author-grid">
+          <article class="anime91-card anime91-author-card">
+            <div class="anime91-avatar">星</div>
+            <h3 class="anime91-h3">星野拾光</h3>
+            <div class="anime91-author-stats">科幻 / 国创 · 作品 42 · 粉丝 86.4万</div>
+            <p class="anime91-author-bio">专注科幻国创的动画导演，擅长用光影表现夜空与记忆。其《星轨列车》系列在平台累计播放超1200万，坚持原创分镜与手绘质感。</p>
+            <button type="button" class="anime91-action-btn" data-anime91-author="星野拾光：科幻国创创作者，作品42部，粉丝86.4万。代表作品《星轨列车》系列。">查看档案</button>
+          </article>
+          <article class="anime91-card anime91-author-card">
+            <div class="anime91-avatar" style="background:linear-gradient(135deg,#ef476f,#fca5a5);">橘</div>
+            <h3 class="anime91-h3">橘子汽水</h3>
+            <div class="anime91-author-stats">治愈 / 日常 · 作品 66 · 粉丝 72.1万</div>
+            <p class="anime91-author-bio">日常治愈系动画UP主，以咖啡馆、街角与猫为创作母题。画面干净温暖，擅长用微小日常讲述陪伴与成长，社区口碑长期靠前。</p>
+            <button type="button" class="anime91-action-btn" data-anime91-author="橘子汽水：治愈日常创作者，作品66部，粉丝72.1万。代表作品《午后咖啡馆的猫》。">查看档案</button>
+          </article>
+          <article class="anime91-card anime91-author-card">
+            <div class="anime91-avatar" style="background:linear-gradient(135deg,#6ee7b7,#5e60ce);">剑</div>
+            <h3 class="anime91-h3">剑鸣工作室</h3>
+            <div class="anime91-author-stats">热血 / 战斗 · 作品 38 · 粉丝 64.7万</div>
+            <p class="anime91-author-bio">三人动画团队，专注热血战斗与动态分镜。坚持每周更新制作日志，公开作画流程，是平台创作者激励计划第3期入选团队。</p>
+            <button type="button" class="anime91-action-btn" data-anime91-author="剑鸣工作室：热血战斗动画团队，作品38部，粉丝64.7万。代表作品《剑与微光》。">查看档案</button>
+          </article>
+          <article class="anime91-card anime91-author-card">
+            <div class="anime91-avatar" style="background:linear-gradient(135deg,#a78bfa,#8ecae6);">海</div>
+            <h3 class="anime91-h3">海风邮差</h3>
+            <div class="anime91-author-stats">青春 / 旅行 · 作品 51 · 粉丝 58.3万</div>
+            <p class="anime91-author-bio">以沿海城市旅行为线索的动画创作者，作品常出现邮局、车站与海风。擅长将真实取景转化为手绘场景，影像节奏舒缓，深受年轻用户喜爱。</p>
+            <button type="button" class="anime91-action-btn" data-anime91-author="海风邮差：青春旅行题材创作者，作品51部，粉丝58.3万。代表作品《海风邮局》。">查看档案</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- S6 用户评价 / 评分摘要（双列短评） -->
+    <section class="anime91-section" id="anime91Reviews" aria-labelledby="anime91ReviewsTitle">
+      <div class="anime91-container">
+        <span class="anime91-eyebrow">社区口碑</span>
+        <h2 class="anime91-h2" id="anime91ReviewsTitle">免费91版动漫<em>用户评价</em>与评分摘要</h2>
+        <p class="anime91-sub">来自真实用户的观看体验与创作反馈，平均评分 4.8 / 5。</p>
+
+        <div class="anime91-review-grid">
+          <article class="anime91-card anime91-review-card">
+            <div class="anime91-review-head">
+              <div class="anime91-review-user"><span class="anime91-review-avatar">林</span><b>林间有风</b></div>
+              <span class="anime91-star">★★★★★</span>
+            </div>
+            <p class="anime91-review-text">追《星轨列车》整整一年，画面和配乐都很稳，正版高清看着就是舒服。希望专题里能多一些幕后分镜解析。</p>
+          </article>
+          <article class="anime91-card anime91-review-card">
+            <div class="anime91-review-head">
+              <div class="anime91-review-user"><span class="anime91-review-avatar alt-1">阿</span><b>阿柚不吃鱼</b></div>
+              <span class="anime91-star">★★★★★</span>
+            </div>
+            <p class="anime91-review-text">治愈系作品选得很有眼光，晚上下班看两集《午后咖啡馆的猫》真的很放松。社区里的弹幕氛围也不错，没有乱七八糟的刷屏。</p>
+          </article>
+          <article class="anime91-card anime91-review-card">
+            <div class="anime91-review-head">
+              <div class="anime91-review-user"><span class="anime91-review-avatar alt-2">周</span><b>周末补番人</b></div>
+              <span class="anime91-star">★★★★☆</span>
+            </div>
+            <p class="anime91-review-text">更新比较及时，专题策划有心。唯一小建议是希望搜索能按题材筛选，有时候找老番要多翻几页。</p>
+          </article>
+          <article class="anime91-card anime91-review-card">
+            <div class="anime91-review-head">
+              <div class="anime91-review-user"><span class="anime91-review-avatar alt-3">南</span><b>南瓜灯下</b></div>
+              <span class="anime91-star">★★★★★</span>
+            </div>
+            <p class="anime91-review-text">我是看了创作者激励计划的名单才知道这里的。《剑与微光》的战斗分镜真的很顶，作为同行很受启发，希望平台继续扶持原创团队。</p>
+          </article>
+          <article class="anime91-card anime91-review-card">
+            <div class="anime91-review-head">
+              <div class="anime91-review-user"><span class="anime91-review-avatar alt-4">小</span><b>小满的姐姐</b></div>
+              <span class="anime91-star">★★★★☆</span>
+            </div>
+            <p class="anime91-review-text">画面清晰度很稳定，投屏看也没有糊。孩子很喜欢《海风邮局》，一家人周末一起看还挺温暖的。</p>
+          </article>
+          <article class="anime91-card anime91-review-card">
+            <div class="anime91-review-head">
+              <div class="anime91-review-user"><span class="anime91-review-avatar">K</span><b>Kaze</b></div>
+              <span class="anime91-star">★★★★★</span>
+            </div>
+            <p class="anime91-review-text">收藏和追番同步做得不错，切换设备很方便。希望以后能出个个人年度观看报告，肯定很有意思。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 关键词解析 800+ 字 -->
+    <section class="anime91-section" id="anime91Analysis" aria-labelledby="anime91AnalysistTitle">
+      <div class="anime91-container">
+        <span class="anime91-eyebrow">深度解析</span>
+        <h2 class="anime91-h2" id="anime91AnalysistTitle">免费91版动漫<em>关键词解析</em>与平台价值</h2>
+        <p class="anime91-sub">从内容供给、观看体验与创作生态三个维度，理解“免费91版动漫”这一关键词背后的平台实践。</p>
+
+        <div class="anime91-analysis">
+          <div class="anime91-card anime91-analysis-block">
+            <h3 class="anime91-h3">一、内容供给：正版高清与多元题材</h3>
+            <p>“免费91版动漫”的核心不是简单地把作品搬到线上，而是围绕正版授权与高清画质建立可持续的内容供给体系。平台累计上线作品2860余部，题材覆盖热血、治愈、日常、科幻、国创、运动与悬疑等方向。</p>
+            <p>选片团队按季度制定片单，与40余家制作机构保持长期合作，同时通过社区投票和专题征集，让用户参与内容决策。每周四部新番同步更新，专题企划按时上线，形成稳定的追番节奏。</p>
+            <p>为了保证长期观看体验，平台对片源进行统一编码与码率优化，在不同网络环境下提供自适应清晰度；片头片尾、字幕与分集信息均做规范化处理，方便跨设备续播。</p>
+          </div>
+          <div class="anime91-card anime91-analysis-block">
+            <h3 class="anime91-h3">二、观看体验：轻量交互与社区共治</h3>
+            <p>观看体验是“免费91版动漫”官网的另一条主线。播放页围绕内容本身组织信息，标题、简介、创作者、标签与数据清晰排列，减少干扰元素；播放器支持清晰度切换、倍速与投屏，满足不同场景下的观看习惯。</p>
+            <p>社区侧则通过弹幕礼仪提示、举报反馈入口与评价摘要共同维护氛围。用户评价以短评、评分与专题讨论等形式沉淀，平台据此优化推荐与片单排序，形成“反馈—优化—再反馈”的良性循环。</p>
+            <p>收藏、点赞与追番列表之间数据互通，用户在网页端收藏的作品可以在移动端继续观看。搜索支持动漫名、创作者昵称与专题关键词，前端即时反馈候选结果，减少无效点击。</p>
+          </div>
+          <div class="anime91-card anime91-analysis-block">
+            <h3 class="anime91-h3">三、创作生态：创作者激励与长期成长</h3>
+            <p>“免费91版动漫”不仅是一个观看平台，也是一个面向原创作者的社区。创作者激励计划已连续发放4期，覆盖动画短片、分镜解析、幕后记录与配乐创作等多种类型，鼓励多元表达与持续更新。</p>
+            <p>平台为创作者提供脚本建议、标题参考、剪辑思路等工具支持，并组织比赛、报名与投票活动，让优秀作品获得更集中的曝光。专题企划中固定保留创作者访谈与幕后手稿，让创作过程被看见。</p>
+            <p>在责任层面，平台坚持正版内容、明确版权归属与转载规范，并通过举报反馈机制处理不当内容。我们相信，真实、温暖、有力量的动漫内容来自创作者与用户共同维护的内容生态。</p>
+          </div>
+          <div class="anime91-card anime91-analysis-block">
+            <h3 class="anime91-h3">四、品牌实践：值得信赖的长期运营</h3>
+            <p>从2019年成立至今，免费91版动漫官方网站持续围绕“精品内容、专业运营、用户至上”打磨产品能力。平台以季度为单位发布企业动态与更新日志，公开片单调整、功能迭代与社区规则变化。</p>
+            <p>合作方面，平台与版权方、制作机构、配音团队和高校动画社团建立伙伴关系，共同推进原创扶持与人才培养。对用户而言，这意味着更稳定的更新、更清晰的版权信息与更可靠的服务承诺。</p>
+            <p>未来，平台将继续深耕动漫垂直领域，完善创作者成长路径与内容分发效率，以匠心与创新回应每一份期待，让“免费91版动漫”成为值得信赖的动漫内容品牌。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S7 辅助区：企业动态 + 合作品牌 + FAQ -->
+    <section class="anime91-section" id="anime91Faq" aria-labelledby="anime91FaqTitle">
+      <div class="anime91-container">
+        <span class="anime91-eyebrow">企业动态与帮助</span>
+        <h2 class="anime91-h2" id="anime91FaqTitle">免费91版动漫<em>企业动态</em>与常见问题</h2>
+        <p class="anime91-sub">官方发布的最新资讯、合作品牌与使用帮助。</p>
+
+        <div class="anime91-grid anime91-grid--2" style="align-items:start;">
+          <div>
+            <h3 class="anime91-h3" style="margin-bottom:12px;">企业动态 / 更新日志</h3>
+            <ul class="anime91-news-list">
+              <li><time datetime="2026-11-22">11月22日</time><span>《星轨列车》第9话上线，冬日补番计划专题同步开放报名。</span></li>
+              <li><time datetime="2026-11-18">11月18日</time><span>创作者激励金第4期名单公布，共27位创作者入选。</span></li>
+              <li><time datetime="2026-11-10">11月10日</time><span>播放器新增投屏与倍速记忆功能，收藏同步优化上线。</span></li>
+              <li><time datetime="2026-11-02">11月2日</time><span>与三家国创动画工作室完成年度合作签约，国创新力量专题筹备中。</span></li>
+              <li><time datetime="2026-10-26">10月26日</time><span>社区举报反馈通道升级，平均处理时效缩短至12小时。</span></li>
+            </ul>
+
+            <h3 class="anime91-h3" style="margin:26px 0 12px;">合作品牌 / 伙伴</h3>
+            <div class="anime91-partner-row">
+              <div class="anime91-partner"><b>星轨制作</b>动画承制</div>
+              <div class="anime91-partner"><b>青禾配音</b>声音合作</div>
+              <div class="anime91-partner"><b>拾光音乐</b>原创配乐</div>
+              <div class="anime91-partner"><b>南风社</b>高校动画社团</div>
+            </div>
+          </div>
+
+          <div class="anime91-faq">
+            <h3 class="anime91-h3" style="margin-bottom:12px;">常见问题</h3>
+            <details open>
+              <summary>免费91版动漫官网观看需要付费吗？</summary>
+              <p>平台以正版免费观看为基础，绝大部分动漫内容无需付费即可观看。部分专题内的幕后花絮与创作者课程会以活动形式开放，具体规则以页面说明为准。</p>
+            </details>
+            <details>
+              <summary>如何投稿成为平台创作者？</summary>
+              <p>可通过页面上的“投稿入口”提交作品介绍与联系方式，编辑团队会在5个工作日内回复。通过初审的作品将进入创作者社区，并获得选题与剪辑建议。</p>
+            </details>
+            <details>
+              <summary>视频画质可以调整吗？</summary>
+              <p>播放页支持清晰度切换，默认根据网络环境自动选择。若出现卡顿，可手动切换较低清晰度，或在设置中开启省流模式。</p>
+            </details>
+            <details>
+              <summary>收藏与追番数据会同步吗？</summary>
+              <p>同一账号下的收藏、点赞与追番列表会跨端同步。请保持登录状态，并在网络恢复后刷新页面以获取最新数据。</p>
+            </details>
+            <details>
+              <summary>遇到播放异常或内容问题如何反馈？</summary>
+              <p>可使用视频条目上的“举报”按钮，或通过页脚联系方式提交问题描述。平台承诺在12小时内响应，并在处理完成后通过站内通知告知结果。</p>
+            </details>
+            <details>
+              <summary>专题企划的更新频率是怎样的？</summary>
+              <p>常规专题每周三、周五更新，季节性专题按季度上线。专题内作品会标注更新状态，可加入收藏以便在新内容上线时收到提醒。</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- S8 页脚 -->
+  <footer class="anime91-footer">
+    <div class="anime91-container">
+      <div class="anime91-footer-grid">
+        <div>
+          <div class="anime91-logo" style="margin-bottom:12px;"><span class="anime91-logo-mark">91</span><span>免费91版动漫</span></div>
+          <p>免费91版动漫官方网站 · 品牌版权所有<br>正版高清动漫与创作者内容社区</p>
+          <p style="margin-top:10px;">持续运营中 · 企业级内容生态</p>
+        </div>
+        <div>
+          <h4>快速导航</h4>
+          <ul>
+            <li><a href="#anime91Focus">焦点推荐</a></li>
+            <li><a href="#anime91Topics">专题企划</a></li>
+            <li><a href="#anime91Creators">创作者社区</a></li>
+            <li><a href="#anime91Reviews">用户口碑</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>帮助与支持</h4>
+          <ul>
+            <li><a href="#anime91Faq">常见问题</a></li>
+            <li><a href="#anime91Faq">反馈与举报</a></li>
+            <li><a href="#anime91Analysis">关键词解析</a></li>
+            <li><a href="#top">回到顶部</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>联系我们</h4>
+          <ul>
+            <li>商务合作：bd@anime91.example</li>
+            <li>内容投稿：creator@anime91.example</li>
+            <li>用户反馈：support@anime91.example</li>
+          </ul>
+        </div>
+      </div>
+      <div class="anime91-footer-bottom">
+        <span>© 2026 免费91版动漫 官方网站 版权所有 | 浙ICP备2026011278号-2</span>
+        <span>持续运营 · 用户至上 · 正版高清</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button type="button" class="anime91-backtop" id="anime91BackTop" aria-label="回到顶部">↑</button>
+
+  <!-- Toast -->
+  <div class="anime91-toast" id="anime91Toast" role="status" aria-live="polite"></div>
+
+  <!-- 投稿弹窗 -->
+  <div class="anime91-modal" id="anime91SubmitModal" role="dialog" aria-modal="true" aria-labelledby="anime91SubmitTitle">
+    <div class="anime91-modal-box">
+      <button type="button" class="anime91-modal-close" id="anime91SubmitClose" aria-label="关闭">×</button>
+      <h3 id="anime91SubmitTitle">投稿入口</h3>
+      <p>欢迎向免费91版动漫官方投稿原创动漫短片、分镜解析或幕后记录。请留下联系方式与作品简介，编辑团队将在5个工作日内回复。</p>
+      <form id="anime91SubmitForm">
+        <label for="anime91SubmitName">你的昵称</label>
+        <input id="anime91SubmitName" type="text" placeholder="例如：星野拾光" required>
+        <label for="anime91SubmitContact">联系方式（邮箱或社交账号）</label>
+        <input id="anime91SubmitContact" type="text" placeholder="例如：creator@example.com" required>
+        <label for="anime91SubmitIntro">作品简介</label>
+        <textarea id="anime91SubmitIntro" rows="3" placeholder="简要说明作品题材、时长与创作思路……" required></textarea>
+        <button type="submit" class="anime91-btn" style="margin-top:16px;width:100%;justify-content:center;">提交投稿</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 通用信息弹窗 -->
+  <div class="anime91-modal" id="anime91InfoModal" role="dialog" aria-modal="true" aria-labelledby="anime91InfoTitle">
+    <div class="anime91-modal-box">
+      <button type="button" class="anime91-modal-close" id="anime91InfoClose" aria-label="关闭">×</button>
+      <h3 id="anime91InfoTitle">信息</h3>
+      <p id="anime91InfoText"></p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+      var toast = document.getElementById('anime91Toast');
+      var toastTimer = null;
+      function showToast(msg) {
+        if (!toast) return;
+        toast.textContent = msg;
+        toast.classList.add('is-show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () { toast.classList.remove('is-show'); }, 2200);
+      }
+
+      /* 移动端导航 */
+      var burger = document.getElementById('anime91Burger');
+      var nav = document.getElementById('anime91Nav');
+      if (burger && nav) {
+        burger.addEventListener('click', function () {
+          var open = nav.classList.toggle('is-open');
+          burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        nav.addEventListener('click', function (e) {
+          if (e.target.tagName === 'A') {
+            nav.classList.remove('is-open');
+            burger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+      /* 搜索前端反馈 */
+      var searchInput = document.getElementById('anime91SearchInput');
+      var searchBtn = document.getElementById('anime91SearchBtn');
+      var searchMsg = document.getElementById('anime91SearchMsg');
+      var searchable = [
+        { keys: ['星轨', '列车', '科幻', '国创', '星野拾光'], hint: '《星轨列车》第9话 · 创作者 星野拾光 · 科幻国创专题' },
+        { keys: ['咖啡', '猫', '治愈', '日常', '橘子汽水'], hint: '《午后咖啡馆的猫》第3话 · 创作者 橘子汽水 · 治愈日常' },
+        { keys: ['剑', '微光', '热血', '战斗', '剑鸣工作室'], hint: '《剑与微光》第6话 · 创作者 剑鸣工作室 · 热血战斗' },
+        { keys: ['海风', '邮局', '青春', '旅行', '海风邮差'], hint: '《海风邮局》第2话 · 创作者 海风邮差 · 青春旅行' },
+        { keys: ['机械', '心跳', '机械心跳'], hint: '《机械心跳》第1话 · 科幻新作 · 齿轮初鸣' },
+        { keys: ['专题', '企划', '补番'], hint: '冬日补番计划 / 国创新力量 / 夏日治愈影像 专题进行中' },
+        { keys: ['创作者', '作者', '投稿'], hint: '创作者社区有4位活跃作者与投稿入口，欢迎原创作品' },
+        { keys: ['评价', '口碑', '评分'], hint: '社区平均评分 4.8 / 5，用户评价持续更新' }
+      ];
+      function doSearch() {
+        if (!searchInput || !searchMsg) return;
+        var q = searchInput.value.trim();
+        if (!q) {
+          searchMsg.textContent = '请输入动漫名、创作者或专题关键词。';
+          searchMsg.style.color = 'var(--anime91-accent-2)';
+          return;
+        }
+        var found = null;
+        for (var i = 0; i < searchable.length; i++) {
+          for (var j = 0; j < searchable[i].keys.length; j++) {
+            if (q.indexOf(searchable[i].keys[j]) !== -1) { found = searchable[i]; break; }
+          }
+          if (found) break;
+        }
+        if (found) {
+          searchMsg.textContent = '为你找到：' + found.hint;
+          searchMsg.style.color = 'var(--anime91-accent)';
+        } else {
+          searchMsg.textContent = '暂未找到「' + q + '」相关结果，可尝试“星轨”“治愈”“专题”等关键词。';
+          searchMsg.style.color = 'var(--anime91-soft)';
+        }
+      }
+      if (searchBtn) searchBtn.addEventListener('click', doSearch);
+      if (searchInput) {
+        searchInput.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter') { e.preventDefault(); doSearch(); }
+        });
+        searchInput.addEventListener('input', function () {
+          if (searchMsg) searchMsg.textContent = '';
+        });
+      }
+
+      /* 点赞 / 收藏 / 复制 / 举报 */
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-anime91-like], [data-anime91-fav], [data-anime91-copy], [data-anime91-report], [data-anime91-author]');
+        if (!btn) return;
+
+        if (btn.hasAttribute('data-anime91-like')) {
+          var span = btn.querySelector('span');
+          var liked = btn.classList.toggle('is-liked');
+          if (span) {
+            var raw = span.textContent.replace(/[^\d.]/g, '');
+            var num = parseFloat(raw) || 0;
+            if (liked) num += 0.1;
+            else num = Math.max(0, num - 0.1);
+            span.textContent = num.toFixed(1) + '万';
+          }
+          btn.textContent = '';
+          btn.appendChild(document.createTextNode(liked ? '♥ 已赞 ' : '♡ 点赞 '));
+          if (span) btn.appendChild(span);
+          else btn.appendChild(document.createTextNode(liked ? '已点赞' : '点赞'));
+          if (liked) showToast('已点赞，感谢支持正版内容');
+          return;
+        }
+
+        if (btn.hasAttribute('data-anime91-fav')) {
+          var on = btn.classList.toggle('is-liked');
+          btn.textContent = on ? '♥ 已收藏' : '☆ 收藏';
+          showToast(on ? '已加入收藏，可在收藏列表回看' : '已取消收藏');
+          return;
+        }
+
+        if (btn.hasAttribute('data-anime91-copy')) {
+          var link = 'https://anime91.example/watch/star-train-09';
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(link).then(function () {
+              showToast('链接已复制，可分享给同好');
+            }).catch(function () {
+              showToast('复制失败，请手动复制页面链接');
+            });
+          } else {
+            showToast('链接已生成：分享本期精选内容');
+          }
+          return;
+        }
+
+        if (btn.hasAttribute('data-anime91-report')) {
+          openInfo('举报 / 反馈', '已收到你的反馈入口请求。请描述具体问题（播放异常、内容不当或版权问题），平台将在12小时内响应处理。');
+          return;
+        }
+
+        if (btn.hasAttribute('data-anime91-author')) {
+          var info = btn.getAttribute('data-anime91-author');
+          openInfo('创作者档案', info);
+        }
+      });
+
+      /* 弹窗 */
+      var submitModal = document.getElementById('anime91SubmitModal');
+      var infoModal = document.getElementById('anime91InfoModal');
+      var infoTitle = document.getElementById('anime91InfoTitle');
+      var infoText = document.getElementById('anime91InfoText');
+      function openInfo(title, text) {
+        if (!infoModal) return;
+        infoTitle.textContent = title;
+        infoText.textContent = text;
+        infoModal.classList.add('is-open');
+      }
+      function closeModal(modal) { if (modal) modal.classList.remove('is-open'); }
+
+      var submitOpen = document.getElementById('anime91SubmitOpen');
+      if (submitOpen && submitModal) submitOpen.addEventListener('click', function () { submitModal.classList.add('is-open'); });
+      var infoClose = document.getElementById('anime91InfoClose');
+      var submitClose = document.getElementById('anime91SubmitClose');
+      if (submitClose && submitModal) submitClose.addEventListener('click', function () { closeModal(submitModal); });
+      if (infoClose && infoModal) infoClose.addEventListener('click', function () { closeModal(infoModal); });
+      [submitModal, infoModal].forEach(function (modal) {
+        if (!modal) return;
+        modal.addEventListener('click', function (e) {
+          if (e.target === modal) closeModal(modal);
+        });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          closeModal(submitModal);
+          closeModal(infoModal);
+        }
+      });
+
+      /* 投稿表单 */
+      var submitForm = document.getElementById('anime91SubmitForm');
+      if (submitForm) {
+        submitForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          closeModal(submitModal);
+          showToast('投稿已提交，编辑团队将在5个工作日内回复');
+          submitForm.reset();
+        });
+      }
+
+      /* 回到顶部 */
+      var backTop = document.getElementById('anime91BackTop');
+      if (backTop) {
+        window.addEventListener('scroll', function () {
+          if (window.scrollY > 560) backTop.classList.add('is-show');
+          else backTop.classList.remove('is-show');
+        }, { passive: true });
+        backTop.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
+</body>
+  </html>
